@@ -1,5 +1,6 @@
 FROM node:14
-COPY server.js /op
-WORKDIR /op
+WORKDIR /victortacu/Victor
+RUN npm install
+COPY ..
 EXPOSE 3000
-CMD [ "node", "server.js" ]
+CMD [ "npm", "start" ]
