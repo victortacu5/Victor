@@ -1,6 +1,7 @@
 FROM node:14
-WORKDIR /victortacu/Victor
-RUN npm install
-COPY ..
+RUN mkdir /op
+WORKDIR /op
+COPY server.js /op
+RUN npm install express
 EXPOSE 3000
-CMD [ "npm", "start" ]
+CMD [ "node", "server.js" ]
