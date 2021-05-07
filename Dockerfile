@@ -1,12 +1,5 @@
 FROM node:14
-ENV NODE_ENV=production
-
-WORKDIR /victortacu/Victor
-
-COPY ["package.json", "package-lock.json*", "./"]
-
-RUN npm install --production
-
-COPY . .
-
+COPY server.js /op
+WORKDIR /op
+EXPOSE 3000
 CMD [ "node", "server.js" ]
