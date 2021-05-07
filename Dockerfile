@@ -1,6 +1,5 @@
-FROM golang:1.11-alpine
-RUN mkdir /openshift
-COPY server.js /openshift
-WORKDIR /openshift
+FROM node:14
+WORKDIR /victortacu5/Victor
+COPY server.js ./
 RUN go build -o server.js .
 ENTRYPOINT ["/server.js"]
