@@ -1,7 +1,0 @@
-version: latest
-os: linux
-hooks:
-  Install:
-    - location: /configserver
-      timeout: 30
-      runas: root
