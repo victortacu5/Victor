@@ -1,8 +1,5 @@
 version: latest
 os: linux
-files:
-  - source: /index.html
-    destination: /var/www/html/
 hooks:
   Install:
     - location: /configserver
