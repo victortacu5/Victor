@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+        steps {
+            echo 'Build'
+        }
+        }
+        stage ('Deploy') {
+        parallel {
+            stage ('Deploy Apache'){
+            steps {
+                echo "Start"
+                sh "sudo -S apt-get install -y apache2"
+                sh "sudo systemctl start apache2"
+            }
+            }
+            stage ('Deploy Web Server') {
+            agent any
+            steps {
+                sh "curl localhost:80"
+            }
+            }
+        }
+        }
+    }
+}
