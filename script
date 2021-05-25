@@ -11,10 +11,10 @@ pipeline {
             stage('Deploy start'){
             steps{
                 echo "Start"
-                sh "git clone https://github.com/ionutcaramaliu/Jenkins.git"
-                sh "sudo -s yum install httpd -y"
-                sh "sudo systemctl start httpd"
-                sh "sudo systemctl enable httpd"
+                sh "git clone https://github.com/victortacu5/Victor.git"
+                sh "sudo -S apt-get install apache2 -y"
+                sh "sudo systemctl start apache2"
+                sh "sudo systemctl enable apache2"
                 sh "sudo cd Jenkins"
                 sh "sudo cp index.html /var/www/html/"
                 sh "sudo chmod 777 /var/www/html/index.html"
